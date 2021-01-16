@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Hachi+Maru+Pop&display=swap" rel="stylesheet">
+  <script src="js/jquery-3.5.1.min.js"></script>
+  <script src="https://kit.fontawesome.com/68a9ee5760.js" crossorigin="anonymous"></script>
+  <title>練習用</title>
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="top-logo floatLeft js-scrollTop">
+        <a href="#top">TOP</a>
+      </div>
+      <div class="nav-wrapper floatRight">
+        <nav class="top-nav floatLeft">
+          <ul class="nav-list">
+            <li class="list-item floatLeft js-scrollTop"><a href="index.html">HOME</a></li>
+            <li class="list-item floatLeft js-scrollTop"><a href="#life">LIFE</a></li>
+            <li class="list-item floatLeft js-scrollTop"><a href="#wolves">WOLVES</a></li>
+            <li class="list-item floatLeft js-scrollTop"><a href="#faq">FAQ</a></li>
+            <li class="list-item floatLeft js-scrollTop"><a href="#contact">CONTACT</a></li>
+          </ul>
+        </nav>
+        <div class="login-wrapper floatLeft js-showLoginModal">
+          <a class="login">LOGIN</a>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- ログイン・新規登録フォーム -->
+  <div class="modal-wrapper js-login-modal">
+    <div class="modal">
+      <div class="close-modal js-closeModal">
+        <i class="fas fa-times"></i>
+      </div>
+      <form class="login-form">
+        <div class="heading">
+          <h2>Emailログイン</h2>
+        </div>
+        <input class="js-reset-value" type="text" name="email" placeholder="メールアドレス">
+        <input class="js-reset-value" type="password" name="password" placeholder="パスワード">
+        <input type="submit" name="submit" value="ログイン">
+      </form>
+    </div>
+  </div>
+  <div class="modal-wrapper js-signup-modal">
+    <div class="modal">
+      <div class="close-modal js-closeModal">
+        <i class="fas fa-times"></i>
+      </div>
+      <form class="signup-form">
+        <div class="heading">
+          <h2>新規登録</h2>
+        </div>
+        <input class="js-reset-value" type="text" name="email" placeholder="メールアドレス">
+        <input class="js-reset-value" type="password" name="password" placeholder="パスワード">
+        <input type="submit" name="submit" value="ログイン">
+      </form>
+    </div>
+  </div>
+  <main class="main">
+    <!-- トップバナー -->
+    <section class="top-wrapper" id="top">
+      <div class="container">
+        <div class="top-content">
+          <h1>Live Together.</h1>
+          <h1>Don't Live Alone.</h1>
+          <div class="btn-wrapper">
+            <a href="#" class="btn signup js-showSignupModal">新規登録</a>
+            <p>or sign up with</p>
+            <div class="sns-wrapper">
+              <a href="#" class="btn facebook floatLeft"><i class="fab fa-facebook-f"></i>facebook</a>
+              <a href="#" class="btn twitter floatRight"><i class="fab fa-twitter"></i>twitter</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- life cycle -->
+    <section class="lifeCycle-wrapper" id="life">
+      <div class="container">
+        <div class="heading">
+          <h2>LIFE CYCLE</h2>
+        </div>
+        <div class="panel-wrapper">
+          <div class="panel floatLeft">
+            <img src="img/wolf_baby.jpg" alt="">
+            <h3>駆け出し</h3>
+            <p>産まれたてのベイビーです。右も左も分かりません。<br>
+            というか、<span class="emphasize-text">何が分からないのか</span>が分かりません！！
+            </p>
+          </div>
+          <div class="panel floatLeft">
+            <img src="img/wolf_salary.jpg" alt="">
+            <h3>会社員</h3>
+            <p>社畜辛いよ。。。<br>
+            ウォォオ〜〜〜〜〜〜ン&#x1f4a6;&#x1f4a6;&#x1f4a6;<br>
+            先輩方、色々助け...教えてください！！
+            </p>
+          </div>
+          <div class="panel floatLeft">
+            <img src="img/wolf_freelance.jpg" alt="">
+            <h3>フリーランス</h3>
+            <p>獲物&#x1f4b0;はデカイのに限るぜぇ〜<br>
+            獲物&#x1f4b0;の匂いがする場所へはどんどん顔を出すぜぇ〜
+            </p>
+          </div>
+          <div class="panel floatLeft">
+            <img src="img/wolves.jpg" alt="">
+            <h3>経営者</h3>
+            <p>みんなでより良い社会を作りましょうね</p>
+            <span class="emoji">&#x1f607;</span>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- オオカミの画像スライド -->
+    <section class="wolves-wrapper" id="wolves">
+      <div class="container">
+        <div class="heading">
+          <h2>WOLVES</h2>
+        </div>
+        <div class="slide-wrapper">
+          <div class="pager-wrapper">
+            <div class="pager floatLeft js-showPrevSlide"><span>← PREV</span></div>
+            <div class="pager floatRight js-showNextSlide"><span>NEXT →</span></div>
+          </div>
+          <div class="img-wrapper">
+            <div class="slide js-isActive"><img src="img/wolf_1.jpg"></div>
+            <div class="slide"><img src="img/wolf_2.jpg"></div>
+            <div class="slide"><img src="img/wolf_3.jpg"></div>
+            <div class="slide"><img src="img/wolf_4.jpg"></div>
+          </div>
+          <div class="indexBtn-wrapper">
+            <div class="indexBtn floatLeft">1</div>
+            <div class="indexBtn floatLeft">2</div>
+            <div class="indexBtn floatLeft">3</div>
+            <div class="indexBtn floatLeft">4</div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- FAQ -->
+    <section class="faq-wrapper" id="faq">
+      <div class="container">
+        <div class="heading">
+          <h2>FAQ</h2>
+        </div>
+        <div class="qa-list-wrapper">
+          <ul class="qa-list">
+            <li class="qa-list-item">
+              <div class="question">オオカミの平均寿命は何歳ですか?<i class="floatRight">+</i></div>
+              <div class="answer">オオカミの平均寿命は６〜８年です。</div>
+            </li>
+            <li class="qa-list-item">
+              <div class="question">オオカミは最大時速何kmで走りますか?<i class="floatRight">+</i></div>
+              <div class="answer">最大で時速70kmのスピードで走ります。</div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <!-- コンタクトフォーム -->
+    <section class="contact-wrapper" id="contact">
+      <div class="container">
+        <div class="heading">
+          <h2>CONTACT</h2>
+        </div>
+        <form class="form-wrapper">
+          <div class="form-item">
+            <label class="label js-valid-name"><span class="popFont">名前：必須</span><span class="js-alert-message"></span>
+              <input class="text-form" type="text" name="name">
+            </label>
+          </div>
+          <div class="form-item">
+            <label class="label js-valid-email"><span class="popFont">E-mail：必須</span><span class="js-alert-message"></span>
+              <input class="text-form" type="text" name="name">
+            </label>
+          </div>
+          <div class="form-item">
+            <label class="label js-valid-textarea"><span class="popFont">内容：任意</span><span class="js-alert-message"></span>
+              <textarea class="textarea-form" name="comment" id="" cols="30" rows="10"></textarea>
+            </label>
+            <div class="counter"><span class="js-text-count">0</span>/100</div>
+          </div>
+          <div class="btn submit floatRight">
+            <input type="submit" name="submit" value="送信">
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <div class="container">
+      <div class="copyright-wrapper">
+        <span>© 2021</span>
+        <div class="wolf-icon"><i class="fab fa-wolf-pack-battalion"></i></div>
+        <span>Kashew</span>
+      </div>
+    </div>
+  </footer>
+  <script src="js/main.js"></script>  
+</body>
+</html>
