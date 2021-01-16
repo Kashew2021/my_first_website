@@ -1,2 +1,9 @@
 # my_first_website
-My first website for learning
+
+プログラミング学習開始から、8日目
+
+今までに学習したHTML/CSS/JavaScriptの知識を基に簡単なWebページを作成しました。
+
+学習記録として、成長記録のためにここに置いておきます。
+
+アウトプット練習用なので、メンテナンスはしません。（現時点では）
