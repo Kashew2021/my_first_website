@@ -1,0 +1,568 @@
+@import "foundation";
+
+// color variables
+$wolfColor: rgb(94, 91, 91);
+$headerColor: rgb(43, 46, 29);
+$beltColor: #f6f5f4;
+$facebookColor: #3b5998;
+$twitterColor: #1da1f2;
+$signupColor: #239b76;
+$hachiMaruPopFont: "Hachi Maru Pop", cursive;
+
+// functions
+@mixin pushButton($color) {
+  background: $color;
+  &:hover {
+    top: -6px;
+    box-shadow: 0 6px darken($color, 20%);
+  }
+  &:active {
+    top: 0;
+    box-shadow: none;
+  }
+}
+
+.floatLeft {
+  float: left;
+}
+
+.floatRight {
+  float: right;
+}
+
+.container {
+  width: 1200px;
+  height: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+  text-align: center;
+}
+
+// header----------------------------------
+.header {
+  background: $headerColor;
+  opacity: 0.8;
+  height: 80px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 1;
+}
+
+.top-logo {
+  position: absolute;
+  top: 40px;
+  background: $wolfColor;
+  color: white;
+  height: 80px;
+  width: 80px;
+  border-radius: 100%;
+  text-align: center;
+  line-height: 80px;
+  a {
+    display: block;
+    height: 100%;
+    width: 100%;
+    font-weight: bold;
+  }
+  &:hover {
+    color: $wolfColor;
+    background: white;
+  }
+}
+
+.nav-wrapper {
+  height: 80px;
+  width: 700px;
+  overflow: hidden;
+}
+
+.top-nav {
+  position: relative;
+  height: 100%;
+  width: 85%;
+}
+
+.nav-list {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: 60%;
+  width: 90%;
+  list-style: none;
+  overflow: hidden;
+
+  .list-item {
+    a {
+      display: block;
+      font-weight: bold;
+      padding: 10px 20px;
+      width: 100%;
+      &:hover {
+        background: white;
+        color: $wolfColor;
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.login-wrapper {
+  height: 100%;
+  width: 15%;
+
+  .login {
+    display: block;
+    width: 80px;
+    margin: 0 auto;
+    line-height: 80px;
+    font-weight: bold;
+    color: $wolfColor;
+    background: $headerColor;
+    border-radius: 50%;
+    cursor: pointer;
+    &:hover {
+      color: white;
+      background: $wolfColor;
+      transition: all 0.5s;
+    }
+  }
+}
+// ------------------- login / signup modal --------------------------
+.modal-wrapper {
+  background: rgba(0, 0, 0, 0.5);
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  z-index: 2;
+  display: none;
+}
+
+.modal {
+  background: rgb(240, 235, 235);
+  height: 360px;
+  width: 450px;
+  border-radius: 10px;
+  position: relative;
+  top: 250px;
+  left: 40%;
+
+  .heading {
+    text-align: center;
+    letter-spacing: 2px;
+  }
+}
+
+.close-modal {
+  position: absolute;
+  top: 13px;
+  right: 15px;
+  font-size: 25px;
+  color: grey;
+  cursor: pointer;
+}
+
+.login-form,
+.signup-form {
+  input[type="text"],
+  input[type="password"] {
+    display: block;
+    text-align-last: left;
+    background: white;
+    border: 1px solid rgb(215, 215, 215);
+    border-radius: 3px;
+    width: 300px;
+    margin: 20px auto;
+    padding: 15px;
+  }
+
+  input[type="submit"] {
+    display: block;
+    text-align: center;
+    color: white;
+    background: #5dca88;
+    width: 320px;
+    margin: 30px auto;
+    border-radius: 3px;
+    padding: 15px;
+  }
+}
+
+// top-banner---------------------------------------------------
+.top-wrapper {
+  height: 900px;
+  width: 100%;
+  opacity: 0.8;
+  background-image: url("../img/wolf.jpg");
+  background-size: cover;
+}
+
+.top-content {
+  position: relative;
+  top: 200px; // top + height = top-wrapperの高さ
+  height: 600px;
+  width: 100%;
+
+  h1 {
+    font-size: 60px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    opacity: 0.3;
+    margin-bottom: 40px;
+  }
+}
+
+.p-wrapper {
+  position: absolute;
+  right: 0;
+  margin-top: 20px;
+
+  p {
+    opacity: 0.6;
+    padding: 10px;
+  }
+}
+
+.btn-wrapper {
+  position: absolute;
+  bottom: 0;
+  height: auto;
+  width: 100%;
+  margin-bottom: 50px;
+
+  p {
+    color: white;
+    opacity: 0.7;
+  }
+}
+
+.btn {
+  display: block;
+  position: relative;
+  width: 150px;
+  padding: 15px;
+  margin: 15px 0;
+  color: white;
+  border-radius: 10px;
+  opacity: 0.7;
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.sns-wrapper {
+  overflow: hidden;
+  width: 320px;
+  margin: 0 auto;
+
+  i {
+    margin-right: 10px;
+  }
+}
+
+.signup {
+  margin: 10px auto;
+  @include pushButton($signupColor);
+}
+
+.facebook {
+  @include pushButton($facebookColor);
+}
+
+.twitter {
+  @include pushButton($twitterColor);
+}
+
+// ------------- lifeCycle section -----------------------
+.lifeCycle-wrapper {
+  background: $beltColor;
+  height: 700px;
+  width: 100%;
+}
+
+.heading {
+  height: 100px;
+  h2 {
+    position: relative;
+    top: 50%;
+    font-size: 30px;
+    opacity: 0.8;
+  }
+}
+
+.panel-wrapper {
+  height: 500px;
+  overflow: hidden;
+}
+
+.panel {
+  height: 440px;
+  width: 25%;
+  position: relative;
+  top: 60px;
+
+  img {
+    display: block;
+    margin: 0 auto;
+    border-radius: 100%;
+  }
+
+  h3 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 20px;
+    text-shadow: 3px 3px 3px grey;
+  }
+
+  p {
+    text-align: left;
+    padding: 20px;
+    font-size: 14px;
+    line-height: 1.8;
+    display: none;
+  }
+
+  .emoji {
+    font-size: 40px;
+    display: none;
+  }
+}
+
+.emphasize-text {
+  text-emphasis: filled sesame black;
+}
+
+//-------------- wolves section ---------------------
+.wolves-wrapper {
+  height: 650px;
+  width: 100%;
+}
+
+.slide-wrapper {
+  height: 100%;
+}
+
+.pager-wrapper {
+  height: 100px;
+  width: 500px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.pager {
+  font-size: 20px;
+  height: 50px;
+  width: 100px;
+  line-height: 50px;
+  position: relative;
+  top: 50px;
+  cursor: pointer;
+
+  &.js-showPrevSlide {
+    display: none;
+  }
+}
+
+.img-wrapper {
+  height: 300px;
+}
+
+.slide {
+  height: 300px;
+  width: 500px;
+  margin: 0 auto;
+  display: none;
+}
+
+.js-isActive {
+  display: block;
+}
+
+.indexBtn-wrapper {
+  height: 50px;
+  width: 20%;
+  margin: 30px auto 0;
+}
+
+.indexBtn {
+  color: white;
+  background: black;
+  border: 1px solid white;
+  line-height: 40px;
+  height: 40px;
+  width: 40px;
+  margin-right: 15px;
+  cursor: pointer;
+  &:first-child {
+    margin-left: 15px;
+  }
+}
+
+//------------------- FAQ section --------------------
+
+.faq-wrapper {
+  background: $beltColor;
+  height: auto;
+  width: 100%;
+  padding-bottom: 100px;
+}
+
+.qa-list-wrapper {
+  height: auto;
+  margin: 50px 0;
+}
+
+.qa-list {
+  height: auto;
+  width: 500px;
+  margin: 0 auto;
+
+  .qa-list-item {
+    color: $wolfColor;
+    height: auto;
+    border-bottom: 1px dotted $wolfColor;
+    cursor: pointer;
+
+    div {
+      text-align-last: left;
+      height: 50px;
+      padding: 15px 0;
+    }
+
+    i {
+      font-weight: bold;
+      font-family: $hachiMaruPopFont;
+      display: block;
+      height: 50px;
+      margin-right: 10px;
+    }
+
+    .question {
+      font-weight: bold;
+    }
+    .answer {
+      font-size: 14px;
+      display: none;
+    }
+  }
+}
+
+// ---------------------- contact form --------------------------
+.contact-wrapper {
+  height: 800px;
+}
+
+.form-wrapper {
+  height: 100%;
+  width: 50%;
+  margin: 0 auto;
+}
+
+.form-item {
+  font-size: 18px;
+  text-align: left;
+  margin: 30px 0;
+
+  .popFont {
+    font-family: $hachiMaruPopFont;
+  }
+
+  .alert-message {
+    display: block;
+  }
+
+  .text-form,
+  .textarea-form {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    background: #f6f5f4;
+  }
+
+  .textarea-form {
+    height: 200px;
+  }
+}
+
+.submit {
+  padding: 0;
+  @include pushButton(grey);
+}
+
+input[type="submit"] {
+  display: block;
+  height: 100%;
+  width: 100%;
+  padding: 15px;
+}
+
+.js-alert-message {
+  margin-left: 20px;
+}
+
+.js-isInvalid {
+  span {
+    color: red;
+  }
+
+  input {
+    border: 1px solid red;
+  }
+}
+
+.js-isValid {
+  span {
+    color: cyan;
+  }
+
+  input {
+    border: 1px solid cyan;
+  }
+}
+
+.counter {
+  margin-top: 10px;
+}
+
+// ----------------------- footer ------------------------
+
+.footer {
+  background: black;
+  height: 80px;
+}
+
+.copyright-wrapper {
+  height: 80px;
+  width: 200px;
+  margin: 0 auto;
+
+  span {
+    display: inline-block;
+    color: $wolfColor;
+    margin: 0 3px;
+    position: relative;
+    top: 15px;
+  }
+}
+
+.wolf-icon {
+  display: inline-block;
+  background: mistyrose;
+  height: 50px;
+  width: 50px;
+  margin: 0 auto;
+  position: relative;
+  top: 15px;
+  border-radius: 100%;
+
+  i {
+    width: 100%;
+    height: 100%;
+    line-height: 50px;
+    transition: 1s;
+    &:hover {
+      opacity: 1;
+      transform: scale(2);
+    }
+  }
+}
